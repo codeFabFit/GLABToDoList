@@ -16,14 +16,14 @@ const TodoItem = ({
       {isEditing ? (
         <>
           <input type="text" value={todo.text} onChange={(e) => onSaveEdit(index, e.target.value)} />
-          <button onClick={onEditTodo}>Cancel</button>
-          <button onClick={() => onSaveEdit(index, todo.text)}>Save</button>
+          <button className='redo' onClick={onEditTodo}>Cancel</button>
+          <button className='save' onClick={() => onSaveEdit(index, todo.text)}>Save</button>
         </>
       ) : (
         <>
           {todo.text}
-          <button onClick={onEditTodo}>Edit</button>
-          <button onClick={onDeleteTodo} disabled={!todo.complete}>
+          <button className='edit' onClick={onEditTodo}>Edit</button>
+          <button className='delete' onClick={onDeleteTodo} disabled={!todo.complete}>
             Delete
           </button>
         </>

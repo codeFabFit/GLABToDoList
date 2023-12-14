@@ -10,14 +10,14 @@ const TodoList = ({
   editingIndex,
 }) => {
   return (
-    <ul>
+    <ul className='list-item'>
       {todos.map((todo, index) => (
         <TodoItem
           key={index}
           todo={todo}
           index={index}
           onToggleComplete={onToggleComplete}
-          onEditTodo={() => onEditTodo(index)}
+          onEditTodo={() => onEditTodo(index) }
           onSaveEdit={onSaveEdit}
           onDeleteTodo={() => onDeleteTodo(index)}
           isEditing={editingIndex === index}
